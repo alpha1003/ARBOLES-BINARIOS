@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Operaciones en un árbol binario de búsqueda | OVA Para arboles binarios de busqueda </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Martín José Burgos Arteaga" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">OVA Para arboles binarios de busqueda</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">OVA Para arboles binarios de busqueda</a></li>
+   <li><a href="presentacin.html" class="no-ch">Presentación</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="metodologa.html" class="no-ch">Metodología</a></li>
+   <li class="current-page-parent"><a href="contenido.html" class="current-page-parent daddy">CONTENIDO</a>
+   <ul>
+      <li><a href="definicion.html" class="no-ch">Definicion</a></li>
+      <li id="active"><a href="operaciones_en_un_rbol_binario_de_bsqueda.html" class="active no-ch">Operaciones en un árbol binario de búsqueda</a></li>
+      <li><a href="autoevaluacin.html" class="no-ch">Autoevaluación</a></li>
+      <li><a href="creditos.html" class="no-ch">Creditos</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="definicion.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="autoevaluacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Operaciones en un árbol binario de búsqueda</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id49">
+<div class="iDevice emphasis0">
+<div id="ta49_85" class="block iDevice_content">
+<div class="exe-fx exe-accordion">
+<h2 style="text-align: justify;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">BUSCAR</span></h2>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Buscar Es una de las operaciones más importantes de esta estructura. Debido a la propiedad de los árboles binarios de búsqueda, si el valor buscado no es igual al de nodo actual, sólo existen dos posibilidades: que sea mayor o que sea menor. Lo que implica que el nodo buscado puede pertenecer a uno de los dos subárboles. Cada vez que se toma la decisión de buscar en uno de los subárboles de un nodo, se están descartando los nodos del otro subárbol. En caso de árboles balanceados, se descarta la mitad de los elementos de la estructura, esto cumple el modelo: T(n) = T(n/2) +c, lo cual asegura costo logarítmico. </span><br /><br /><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">pnodo BuscarIterativo( pnodo t, int valor) {</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">        while ( t != NULL){</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">                         if ( t-&gt;clave == valor ) return (t);</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">                       else {</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">                                   if (t-&gt;clave &lt; valor ) t = t-&gt;right; //desciende por la derecha</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">                       else t = t-&gt;left; //desciende por la izquierda</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">                 }</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">     } return (t);   /* NULL No lo encontró*/ } </span></p>
+<p><br /><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Es preciso tener implementados los operadores de igualdad y menor que, en caso de que éstos no existan en el lenguaje, para el tipo de datos de la clave. Por ejemplo si la clave es alfanumérica (un string), una estructura, etc. </span></p>
+<h2 style="text-align: justify;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">INSERCIÓN</span><span style="font-size: 12pt; font-family: 'times new roman', times, serif;"></span></h2>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">El procedimiento de inserción en un árbol binario de búsqueda es muy sencillo, únicamente hay que tener cuidado de no romper la estructura ni el orden del árbol.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Cuando se inserta un nuevo nodo en el árbol hay que tener en cuenta que cada nodo no puede tener más de dos hijos, por esta razón si un nodo ya tiene 2 hijos, el nuevo nodo nunca se podrá insertar como su hijo. Con esta restricción nos aseguramos mantener la estructura del árbol, pero aún nos falta mantener el orden.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Para localizar el lugar adecuado del árbol donde insertar el nuevo nodo se realizan comparaciones entre los nodos del árbol y el elemento a insertar. El primer nodo que se compara es la raíz, si el nuevo nodo es menor que la raíz, la búsqueda prosigue por el nodo izquierdo de éste. Si el nuevo nodo fuese mayor, la búsqueda seguiría por el hijo derecho de la raíz.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Este procedimiento es recursivo, y su condición de parada es llegar a un nodo que no tenga hijo en la rama por la que la búsqueda debería seguir. En este caso el nuevo nodo se inserta en ese hueco, como su nuevo hijo.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Vamos a verlo con un ejemplo sobre el siguiente árbol:</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><img src="img0.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Se quiere insertar el elemento 6.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Lo primero es comparar el nuevo elemento con la raíz. Como 6 &gt; 4, entonces la búsqueda prosigue por el lado derecho. Ahora el nuevo nodo se compara con el elemento 8. En este caso 6 &lt; 8, por lo que hay que continuar la búsqueda por la rama izquierda. Como la rama izquierda de 8 no tiene ningún nodo, se cumple la condición de parada de la recursividad y se inserta en ese lugar el nuevo nodo.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><img src="img2.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<h2 style="text-align: justify;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">ELIMINACIÓN</span></h2>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">El borrado en árboles binarios de búsqueda es otra operación bastante sencilla excepto en un caso. Vamos a ir estudiando los distintos casos.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Tras realizar la búsqueda del nodo a eliminar observamos que el nodo no tiene hijos. Este es el caso más sencillo, únicamente habrá que borrar el elemento y ya habremos concuído la operación.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Si tras realizar la búsqueda nos encontramos con que tiene un sólo hijo. Este caso también es sencillo, para borrar el nodo deseado, hacemos una especie de puente, el padre del nodo a borrar pasa a apuntar al hijo del nodo borrado.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><img src="img4.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Por último, el caso más complejo, si el nodo a borrar tiene dos hijos. En este caso se debe sustitui el nodo a borrar por mayor de los nodos menores del nodo borrado, o por el menor de los nodos mayores de dicho nodo. Una vez realizada esta sustitución se borrra el nodo que sustituyó al nodo eliminado (operación sencilla ya que este nodo tendrá un hijo a lo sumo).</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Sobre el siguiente árbol queremos eliminar el elemento 6. Tenemos dos opciones para sustituirlo:</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">El menor de sus mayores: 7.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">El mayor de sus menores: 4.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><img src="img3.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Vamos a sustituirlo por el 7 (por ejemplo). El árbol resultante sería el siguiente, tras eliminar también el elemento 7 de su ubicación original.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><img src="img2.1.png" width="450" height="251" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"> </span></p>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="definicion.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="autoevaluacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

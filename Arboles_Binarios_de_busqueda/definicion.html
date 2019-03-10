@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Definicion | OVA Para arboles binarios de busqueda </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Martín José Burgos Arteaga" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">OVA Para arboles binarios de busqueda</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">OVA Para arboles binarios de busqueda</a></li>
+   <li><a href="presentacin.html" class="no-ch">Presentación</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="metodologa.html" class="no-ch">Metodología</a></li>
+   <li class="current-page-parent"><a href="contenido.html" class="current-page-parent daddy">CONTENIDO</a>
+   <ul>
+      <li id="active"><a href="definicion.html" class="active no-ch">Definicion</a></li>
+      <li><a href="operaciones_en_un_rbol_binario_de_bsqueda.html" class="no-ch">Operaciones en un árbol binario de búsqueda</a></li>
+      <li><a href="autoevaluacin.html" class="no-ch">Autoevaluación</a></li>
+      <li><a href="creditos.html" class="no-ch">Creditos</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="contenido.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="operaciones_en_un_rbol_binario_de_bsqueda.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Definicion</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<div class="exe-fx exe-paginated">
+<div class="exe-fx exe-tabs">
+<h2 style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Qué son los árboles binarios de búsqueda</span></h2>
+<p style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Empezaremos definiendo lo que son los árboles. Un árbol es una colección de nodos que puede estar vacía o no. Si no está vacía, el árbol estará formado por un nodo raíz y cero o más (sub)árboles que están unidos a la raíz por otras tantas aristas.</span></p>
+<p><span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><img src="img2.2.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Para que un árbol sea binario es requisito indispensable el que el número máximo de hijos que tenga cada nodo sea 2. Por lo tanto el árbol anterior no es un árbol binario, ya que el nodo A tiene 3 hijos.</span></p>
+<p style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Por último, un árbol será de búsqueda si todos sus nodos cumplen las siguientes condiciones:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Todos los nodos situados a su izquierda son menores que él.</span></li>
+<li style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Todos los nodos situados a su derecha son mayores que él.</span></li>
+<li style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; font-size: 12pt;">Resumiendo, se puede decir que un árbol binario de búsqueda es un árbol en el que cada nodo tiene a lo sumo dos hijos, y en el que para cada nodo todos los nodos a su izquierda son menores que él y todos los nodos a su derecha son mayores que él.</span></li>
+</ul>
+<h2 style="text-align: justify;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">El siguiente árbol es un ejemplo de árbol de búsqueda:</span></h2>
+<p><span style="font-family: 'times new roman', times, serif;"><img src="img0.png" width="198" height="148" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: 'times new roman', times, serif;">En cambio este árbol viola la condición de orden en el nodo 2, ya que un nodo a su derecha, 1, no es mayor que él.</span></p>
+<p><span style="font-family: 'times new roman', times, serif;"> <img src="img1.png" width="197" height="147" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="contenido.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="operaciones_en_un_rbol_binario_de_bsqueda.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
